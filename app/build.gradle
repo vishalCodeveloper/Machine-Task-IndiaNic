@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'kotlin-android'
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs")
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.example.machine_task_indianic"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "WEATHER_API", "\"${WEATHER_API}\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    // Kotlin
+    implementation(Dependencies.kotlin)
+
+    // Android
+    implementation(Android.appcompat)
+    implementation(Android.constraintLayout)
+    implementation(Android.coreKtx)
+    implementation(Android.multidex)
+
+    // Material Design
+    implementation(Design.materialDesign)
+
+    // Navigation
+    implementation(Navigation.navigationFragmentKtx)
+    implementation(Navigation.navigationUiKtx)
+
+    //Hilt
+    implementation(Hilt.hiltAndroid)
+    kapt(Hilt.hiltCompiler)
+    implementation(Hilt.hiltViewModel)
+
+    //Play Service
+    implementation(PlayService.location)
+    implementation(PlayService.maps)
+
+    //Firebase
+    implementation platform(Firebase.core)
+    implementation(Firebase.firebaseAuth)
+
+    //Crypto
+    implementation(Crypto.crypto)
+    implementation(Crypto.cryptoCredential)
+
+    //Room
+    implementation(Room.roomRuntime)
+    kapt(Room.roomCompiler)
+    implementation(Room.roomKtx)
+
+    //Lifecycle
+    kapt(Lifecycle.lifecycleViewModel)
+    kapt(Lifecycle.lifecycleLiveData)
+    kapt(Lifecycle.lifecycleRunTime)
+    kapt(Lifecycle.lifecycleViewModelSavedState)
+    kapt(Lifecycle.lifecycleService)
+
+    // Retrofit
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.retrofitConverter)
+    implementation(Retrofit.retrofitOkhttp3)
+
+    //Other
+    implementation implementation(Other.otpView)
+
+
+    // Testing
+    testImplementation(Testing.jUnit)
+
+    // Android Testing
+    androidTestImplementation(Testing.extJUnit)
+    androidTestImplementation(Testing.espresso)
+}

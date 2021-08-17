@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/CardViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+    app:layout_constraintStart_toStartOf="@id/guideLineStart"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMinTemp"
+            style="@style/Widget.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min_temperature" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMaxTemp"
+            style="@style/Widget.TextView"
+            android:layout_marginTop="12dp"
+            android:text="@string/max_temperature" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewHumidity"
+            style="@style/Widget.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/humidity" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSeaLevel"
+            style="@style/Widget.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/sea_level" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPressure"
+            style="@style/Widget.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/pressure" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
